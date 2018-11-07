@@ -21,14 +21,24 @@ class CreditCard {
     }
     
     public void withdraw(double money) {
+		if((balance>0)||(Math.abs(balance)<limit)){
         balance = balance - money;
+		}
+		else(){
+			System.out.println("Not enough funds");
+		}
     }
     
     public double getCountBalance() {
         return balance;
     }
-	public double repay(){
+	public void repay(){
+		if(balance<0){
+			balance=0;
+		}
+		else{};
 	
 	}
-		
+	public void payment(double sum){
+		this.balance+=sum;
 }
